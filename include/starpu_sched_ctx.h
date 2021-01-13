@@ -290,6 +290,14 @@ struct starpu_sched_policy *starpu_sched_ctx_get_sched_policy(unsigned sched_ctx
 */
 void *starpu_sched_ctx_exec_parallel_code(void* (*func)(void*), void *param, unsigned sched_ctx_id);
 
+void starpu_sched_ctx_block_workers_in_parallel_ctx(unsigned sched_ctx_id);
+
+void starpu_sched_ctx_unblock_workers_in_parallel_ctx(unsigned sched_ctx_id);
+
+void starpu_sched_ctx_block_workers_in_parallel_range(unsigned sched_ctx_id, int start, int size, int stride);
+
+void starpu_sched_ctx_unblock_workers_in_parallel_range(unsigned sched_ctx_id, int start, int size, int stride);
+
 int starpu_sched_ctx_get_nready_tasks(unsigned sched_ctx_id);
 
 double starpu_sched_ctx_get_nready_flops(unsigned sched_ctx_id);
